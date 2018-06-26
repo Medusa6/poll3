@@ -20,7 +20,7 @@ public class CourseServiceImpl implements ICourseService{
 		CourseExample example=new CourseExample();
 		
 		// TODO Auto-generated method stub
-		return coursemapper.selectByExample(example);
+		return coursemapper.selectByExampleWithBLOBs(example);
 	}
 
 	@Override
@@ -40,8 +40,8 @@ public class CourseServiceImpl implements ICourseService{
 	@Override
 	public void saveOrupdate(Course course) throws Exception {
 		// TODO Auto-generated method stub
-		if(course.getId()!=null){
-			coursemapper.updateByPrimaryKey(course);
+		if(course.getId()!=null ){
+			coursemapper.updateByPrimaryKeySelective(course);
 		}else{
 			coursemapper.insert(course);
 		}
