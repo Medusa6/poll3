@@ -21,7 +21,7 @@
        <!-- 通过题目ID查选项 -->
        <select id="selectOptionsByQuestionId" parameterType="long"
          resultType="com.briup.apps.poll3.bean.Options" >
-          select * from poll_options
+          select * from poll_options where question_id=#{id}
        </select>
        
     
