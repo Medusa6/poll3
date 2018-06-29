@@ -9,5 +9,7 @@ public interface QuestionVMMapper {
 	void saveOrupdateQuestionVM(QuestionVM questionVM);
 	
 	void deleteQuestionById(long id);
+	
+	List<QuestionVM> selectByQuestionnaireId();
 
 }
